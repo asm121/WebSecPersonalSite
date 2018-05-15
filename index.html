@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Root The World</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0E0E0F;
+            max-height: 100%;
+            overflow-y: hidden;
+        }
+        .header {
+            padding: 25px 0;
+
+        }
+        img{
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+
+        }
+        .nav {
+            position: -webkit-sticky;
+            text-align: center;
+        }
+
+        .content {
+            width: 600px;
+            margin: 10px auto 100px;
+        }
+
+        .sticky {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            border-top: 0;
+        }
+
+
+        @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+            padding: 0;
+            margin: 0;
+            letter-spacing: 1.1px;
+        }
+
+        body,
+        html {
+
+            font-family: "Varela Round", sans-serif;
+            height: 100%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1230px;
+            margin: 0 auto;
+            height: 10vh;
+            list-style: none;
+        }
+
+        .menu li {
+            width: 400px;
+            height: 50px;
+            transition: background-position-x 0.9s linear;
+            text-align: center;
+        }
+        .menu li a {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.45s;
+        }
+
+        .menu li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        .nav li a {
+            color: white;
+            transition-duration: 1.5s;
+
+        }
+        .nav:hover li a {
+            text-shadow: 0 0 3px #aaa;
+            color: transparent;
+        }
+        .nav li a:hover {
+            color: #fff;
+            text-shadow: none;
+            transition-duration: .5s;
+        }
+
+        #name{
+            position: fixed;
+            top: 90%;
+            left: 65%;
+
+        }
+
+        #desc{
+            position: absolute;
+            top:90%;
+            left: 0%;
+            width: 25%;
+
+        }
+
+        p {
+            font-family: monospace;
+            font-weight: bold;
+
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            color: limegreen;
+            text-shadow: 0px 0px 10px limegreen;
+        }
+
+        #console{
+            display: inline-block;
+            margin: auto;
+            width: 100%;
+            font-size: 2.25vh;
+            padding-top: 5%;
+            max-height: 50%;
+            font-size-adjust: .5;
+
+
+        }
+
+    </style>
+
+        <script>
+            $(document).ready(function() {
+                // grab the initial top offset of the navigation
+                var stickyNavTop = $('.nav').offset().top;
+
+                // our function that decides weather the navigation bar should have "fixed" css position or not.
+                var stickyNav = function(){
+                    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+                    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+                    // otherwise change it back to relative
+                    if (scrollTop > stickyNavTop) {
+                        $('.nav').addClass('sticky');
+                    } else {
+                        $('.nav').removeClass('sticky');
+                    }
+                };
+
+                stickyNav();
+                // and run it again every time you scroll
+                $(window).scroll(function() {
+                    stickyNav();
+                });
+            });
+
+            //HACKER SCREEN SIM
+
+            window.onload=function () {
+
+
+
+                var intervalID = window.setInterval(updateScreen, 200);
+                var c = document.getElementById("console");
+
+                var txt = [
+                    "root@KALI# FORCE: XX0022. ENCYPT://000.222.2345",
+                    "root@KALI# TRYPASS: ********* AUTH CODE: ALPHA GAMMA: 1___ PRIORITY 1",
+                    "root@KALI# RETRY: REINDEER FLOTILLA",
+                    "root@KALI# cd /FALKEN/GAMES/TICTACTOE/ EXECUTE -PLAYERS 0",
+                    "================================================",
+                    "root@KALI# Priority 1 // local / scanning...",
+                    "root@KALI# scanning ports...",
+                    "root@KALI# BACKDOOR FOUND (23.45.23.12.00000000)",
+                    "root@KALI# BACKDOOR FOUND (13.66.23.12.00110000)",
+                    "root@KALI# BACKDOOR FOUND (13.66.23.12.00110044)",
+                    "...",
+                    "...",
+                    "root@KALI# BRUTE.EXE -r -z",
+                    "...locating vulnerabilities...",
+                    "...vulnerabilities found...",
+                    "root@KALI# MCP/> DEPLOY CLU",
+                    "root@KALI# SCAN: __ 0100.0000.0554.0080",
+                    "root@KALI# SCAN: __ 0020.0000.0553.0080",
+                    "root@KALI# SCAN: __ 0001.0000.0554.0550",
+                    "root@KALI# SCAN: __ 0012.0000.0553.0030",
+                    "root@KALI# SCAN: __ 0100.0000.0554.0080",
+                    "root@KALI# SCAN: __ 0020.0000.0553.0080",
+                    "root@KALI# Priority 1 // local / scanning...",
+                    "root@KALI# scanning ports...",
+                    "root@KALI# BACKDOOR FOUND (23.45.23.12.00000000)",
+                    "root@KALI# BACKDOOR FOUND (13.66.23.12.00110000)",
+                    "root@KALI# BACKDOOR FOUND (13.66.23.12.00110044)",
+                ];
+
+                var docfrag = document.createDocumentFragment();
+
+                function updateScreen() {
+                    //Shuffle the "txt" array
+                    txt.push(txt.shift());
+                    //Rebuild document fragment
+                    txt.forEach(function (e) {
+                        var p = document.createElement("p");
+                        p.textContent = e;
+                        docfrag.appendChild(p);
+                    });
+                    //Clear DOM body
+                    while (c.firstChild) {
+                        c.removeChild(c.firstChild);
+                    }
+                    c.appendChild(docfrag);
+                }
+            }
+        </script>
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+        <div class="header">
+            <img src="root.PNG"/>
+        </div>
+        <div class="nav">
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">VulnHub Solutions</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li id = "name"><a href="#">Austin Martin</a></li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="msg"></div>
+        <div id="console">
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
